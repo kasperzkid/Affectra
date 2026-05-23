@@ -1,0 +1,197 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 20px;
+  min-height: 90vh;
+  position: relative;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 24px;
+  background: var(--accent-blue);
+  border: 1px solid rgba(30, 144, 255, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-text {
+  flex: 1.2;
+  max-width: 600px;
+}
+
+.gradient-text {
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #0f172a, var(--primary-blue), var(--secondary-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+}
+
+.hero-text .subheading {
+  font-size: 18px;
+  color: var(--text-light);
+  margin-bottom: 40px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-cta .btn-outline {
+  display: inline-block;
+  padding: 12px 26px;
+  font-size: 16px;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.graphic-hero {
+  width: 500px;
+  height: 500px;
+  background: var(--primary-blue);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.12;
+}
+
+.circle-collage {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.main-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  z-index: 1;
+  border: 2px solid rgba(30, 144, 255, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.img-placeholder {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffffff, var(--accent-blue));
+  border: 6px solid white;
+  box-shadow: 0 15px 35px rgba(30, 144, 255, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.img-placeholder:hover {
+  transform: scale(1.08) translateY(-10px);
+  box-shadow: 0 20px 45px rgba(30, 144, 255, 0.25);
+  border-color: var(--accent-blue);
+}
+
+.placeholder-svg {
+  width: 55%;
+  height: 55%;
+  margin-bottom: 8px;
+}
+
+.placeholder-text-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.img-1 {
+  width: 170px;
+  height: 170px;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.img-2 {
+  width: 190px;
+  height: 190px;
+  bottom: 30px;
+  left: -10px;
+  z-index: 2;
+}
+
+.img-3 {
+  width: 180px;
+  height: 180px;
+  bottom: 20px;
+  right: -10px;
+  z-index: 2;
+}
+
+.floating-card {
+  position: absolute;
+  bottom: 120px;
+  left: -30px;
+  padding: 16px 24px;
+  border-radius: 18px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  animation: floatBlob 6s ease-in-out infinite alternate;
+}
+
+.stats-number {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--primary-blue);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stats-text {
+  font-size: 11px;
+  color: var(--text-light);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.floating-dots .dot {
+  position: absolute;
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  border-radius: 50%;
+}
+
+.dot-animate-1 { width: 16px; height: 16px; top: 40px; left: 40px; animation: floatBlob 4s infinite alternate; }
+.dot-animate-2 { width: 12px; height: 12px; top: 80px; right: 0; animation: floatBlob 5s infinite alternate-reverse; }
+.dot-animate-3 { width: 24px; height: 24px; bottom: 80px; left: -30px; opacity: 0.5; animation: floatBlob 6s infinite alternate; }
+.dot-animate-4 { width: 14px; height: 14px; bottom: 0; right: 80px; animation: floatBlob 4.5s infinite alternate-reverse; }

@@ -1,0 +1,41 @@
+.vision-section {
+  position: relative;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.vision-bg-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+  background-size: 30px 30px;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.vision-content {
+  position: relative;
+  z-index: 10;
+}
+
+.vision-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+.vision-desc {
+  font-size: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 300;
+  line-height: 1.6;
+  opacity: 0.9;
+}

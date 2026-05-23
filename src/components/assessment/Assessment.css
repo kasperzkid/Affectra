@@ -1,0 +1,318 @@
+/* src/components/assessment/Assessment.css */
+
+:root {
+  --assess-bg: #FFFFFF;
+  --assess-card-bg: #F4F6F9;
+  --assess-primary: #0FA3B1;
+  --assess-primary-hover: #0c8a96;
+  --assess-text-main: #0A1628;
+  --assess-text-muted: #5a6b82;
+  --assess-border: #E2E8F0;
+  --assess-radius: 12px;
+}
+
+.assessment-layout {
+  min-height: 100vh;
+  background-color: var(--assess-bg);
+  color: var(--assess-text-main);
+  font-family: 'Inter', system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Progress Bar */
+.assessment-progress-container {
+  width: 100%;
+  height: 6px;
+  background-color: var(--assess-card-bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.assessment-progress-bar {
+  height: 100%;
+  background-color: var(--assess-primary);
+  transition: width 0.5s ease-in-out;
+}
+
+/* Main Container */
+.assessment-main {
+  display: flex;
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 2rem;
+}
+
+/* Sidebar */
+.assessment-sidebar {
+  width: 250px;
+  padding: 2rem 1.5rem;
+  position: sticky;
+  top: 2rem;
+  height: calc(100vh - 4rem);
+}
+
+.assessment-sidebar-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--assess-text-main);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.assessment-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.assessment-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--assess-text-muted);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.assessment-nav-item.active {
+  color: var(--assess-primary);
+  font-weight: 700;
+}
+
+.assessment-nav-item.completed {
+  color: var(--assess-text-main);
+}
+
+.nav-status-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--assess-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.assessment-nav-item.active .nav-status-icon {
+  border-color: var(--assess-primary);
+  background-color: rgba(15, 163, 177, 0.1);
+}
+
+.assessment-nav-item.completed .nav-status-icon {
+  border-color: var(--assess-primary);
+  background-color: var(--assess-primary);
+  color: white;
+}
+
+/* Content Area */
+.assessment-content-wrapper {
+  flex: 1;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.assessment-card {
+  background-color: var(--assess-bg);
+  border: 1px solid var(--assess-border);
+  border-radius: var(--assess-radius);
+  padding: 3rem;
+  box-shadow: 0 4px 20px rgba(10, 22, 40, 0.05);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 0.4s ease-out;
+}
+
+.module-header {
+  margin-bottom: 2.5rem;
+}
+
+.module-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--assess-text-main);
+  margin-bottom: 0.5rem;
+}
+
+.module-subtitle {
+  font-size: 1.05rem;
+  color: var(--assess-text-muted);
+}
+
+/* Shared Form Elements */
+.assess-form-group {
+  margin-bottom: 2rem;
+}
+
+.assess-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: var(--assess-text-main);
+  font-size: 1.05rem;
+}
+
+.assess-input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--assess-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--assess-card-bg);
+  color: var(--assess-text-main);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+}
+
+.assess-input:focus {
+  outline: none;
+  border-color: var(--assess-primary);
+  box-shadow: 0 0 0 3px rgba(15, 163, 177, 0.15);
+  background-color: var(--assess-bg);
+}
+
+/* Slider Customization */
+.assess-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--assess-border);
+  outline: none;
+}
+
+.assess-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--assess-primary);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.assess-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+/* Custom Radios/Toggles */
+.assess-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.assess-option-card {
+  border: 1px solid var(--assess-border);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--assess-bg);
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.assess-option-card:hover {
+  border-color: var(--assess-primary);
+  background-color: var(--assess-card-bg);
+}
+
+.assess-option-card.selected {
+  border-color: var(--assess-primary);
+  background-color: rgba(15, 163, 177, 0.1);
+  color: var(--assess-primary);
+  font-weight: 600;
+}
+
+/* Bottom Navigation */
+.assessment-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+  border-top: 1px solid var(--assess-border);
+}
+
+.btn-assess {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-assess-secondary {
+  background-color: var(--assess-bg);
+  border: 1px solid var(--assess-border);
+  color: var(--assess-text-muted);
+}
+
+.btn-assess-secondary:hover {
+  background-color: var(--assess-card-bg);
+  color: var(--assess-text-main);
+}
+
+.btn-assess-primary {
+  background-color: var(--assess-primary);
+  border: 1px solid var(--assess-primary);
+  color: white;
+}
+
+.btn-assess-primary:hover {
+  background-color: var(--assess-primary-hover);
+  box-shadow: 0 4px 12px rgba(15, 163, 177, 0.3);
+}
+
+.btn-assess:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .assessment-main {
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+  
+  .assessment-sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--assess-border);
+  }
+  
+  .assessment-nav-list {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+  
+  .assessment-nav-item span {
+    display: none; /* Hide text on small screens, just show numbers */
+  }
+  
+  .assessment-content-wrapper {
+    padding: 1.5rem;
+  }
+}
